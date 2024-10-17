@@ -1,0 +1,123 @@
+Ans01- Differance between controlled and uncontrolled components-
+       Main Differance is that When form data is handled by React is known as controlled componenets.
+       when form data is handled by DOM is called uncontrolled componenets.
+
+Ans02- Significance of Functional components-
+       Functional components provide a easier and simplified way of create components in compare to class components. it takes props and return 
+       JSX code.
+       Use State- UseState hook used for state managements.
+       Use Effect - useEffect hook used for manage side Effect or we can say if we wanna to do anything after rendering Like api fetching.
+       Use Referance- UseRef hook used for store value that does not affect during rerendering and used for access DOM elements.
+
+Ans03- Redux toolkit-
+       it is a modern way of managing states during making complicated UI in a very easier and simplify way.
+    How it is work- 
+       -We install redux toolkit in our react app.
+       -Create slice(define state, actions and reducers).
+       -Create ConfigureStore.
+       -Provide store to Our App.
+       -Than use components like- useSelector-acces the state & useDisptach- dispatch actions.
+    Prop Drilling-
+        When we pass data by props from parent to child components through multiple intermediate components that process is known as prop drilling
+    How to aviod it-
+        -By the use of context APi.
+        -By Redux
+
+Ans04- Box Model-
+       Box model says that elements in the html page are in the form of a Ractangular box. which have border, margin, padding and content box.
+    How to create Scroll bar-
+       When we have contents more than a box can hold than we use a property (overflow:hidden) for hiding the overflow contents from the box. and
+       by use of this property scrollbar will be created.
+
+Ans05- canllback hell-
+       When we have multiple asynchronous operation and we creates for this callback inside callback than it leads to callback hell.
+       and code maitainability and readability decreases thats why we avoid callback hell.
+    How to aviod it-
+       -By Promises
+       - By async-await.
+
+Ans06- Clousres-
+    When we wanna to access local variable outside of fuction after the function execution that we use Clousres.
+    Example-
+        fuction outerFunction (){
+            let outerVar = "i am Govind"
+
+            function innerFunction (){
+                console.log(outerVar)
+            }
+
+            return innerFunction
+        }
+
+      let myFunc =  outerFunction()
+       myFunc()   //output- i am Govind
+
+    We can access outer function variable inside the inner function but we can't access variable from innerr to outer or siblins.
+    This happen because when we return inner function it also return the lexical scope of innerFunction.
+
+Ans07- Event Loop-
+       Event loops allow us to execute asynchrunous calls/non-blocking operations in proper order. When we have a piece of code in
+       which we have a asynchrounous task we know that javascript by default is a single threaded PG.  execution start in call stack 
+       firstly global execution context will execute than one by one by tasks will executes at the time of asynchronus task , asynchronous task 
+       need some time for execute so Event loop register it on web Api after the registering in the wen api time will start and event loop keep
+       eye on it after the time completion event loop register it on the task queue/priority queue. after the execution inside the call stack this
+       async task will execute.
+       this asynchronous operation is managed by event loop.
+    Why it is crucial to use-
+    Because without it process of manage or executes async operations become too much complicated.
+
+Ans08- Function which makes three asyc call by Promises-
+    function asyncPromises(){
+        const promiseOne = new Promise((resolve, reject)=> {
+            setTimeOut(() => {
+                console.log("p1 created")
+            }, 2000)
+            resolve()
+        })
+        promiseOne.then(()=>{
+            console.log("p1 consumed")
+        })
+        promiseOne.catch((err) => {
+            console.log(`error ${err})
+        })
+        const promiseTwo = new Promise((resolve, reject)=> {
+            setTimeOut(() => {
+                console.log("p2 created")
+            }, 4000)
+            resolve()
+        })
+        promiseOne.then(()=>{
+            console.log("p2 consumed")
+        })
+        promiseOne.catch((err) => {
+            console.log(`error ${err})
+        })
+        const promiseThree = new Promise((resolve, reject)=> {
+            setTimeOut(() => {
+                console.log("p3 created")
+            }, 3000)
+            resolve()
+        })
+        promiseOne.then(()=>{
+            console.log("p3 consumed")
+        })
+        promiseOne.catch((err) => {
+            console.log(`error ${err})
+        })
+    }
+   - We used catch( ) for dealing with error.
+   - in async/await we use try-catch block for error handling
+
+Ans09- ES-6 Features-
+   ES-6 provides so many features in javascript-
+
+  - Variable block scope issue- resolve in Es-6 by the use of let.
+  - provide symbols- for unique and immutable value used in keys.
+  - Provide arrow function - shorter way of describe a function.
+  - template literals , string polation.
+  - Destructing- we can assign array and objects specific value to a specific variable.
+  - Provided classes features for easy to use javascript for another Programming language programmer.
+  - provide promises - for simplify asynchronous programming(callback hell complicated).
+  - provide forOf loop- for objects iteration.
+  - Maps for unique values.
+  these all are js features which are provided in ES-6.
