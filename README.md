@@ -1,5 +1,8 @@
 section01 complted.
 we devided section02 in two part-backend and frontend. 
+
+Section02-
+
 Backend-
 Firstly we create a node.js project. Than we install express for creating server and api, bcryptjs for password encryption, mongodb for model and jsonwebtoken for access token. 
 Than we create server.js file .
